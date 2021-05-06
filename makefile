@@ -1,15 +1,25 @@
 CC=g++
-CF=-pedantic -W
+CF=-std=c++11 -pedantic -W -pthread
 
-main: main.cpp main.hpp 
-	$(CC) $(CF) main.cpp
+BUILD_DIR=build
 
-System: System.cpp System.hpp 
-	$(CC) $(CF) System.cpp
+all: $(BUILD_DIR) Network
 
-Switch: Switch.cpp Switch.hpp 
-	$(CC) $(CF) Switch.cpp
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+Network: $(BUILD_DIR)/main.o $(BUILD_DIR)/System.o $(BUILD_DIR)/Switch.o
+	$(CC) $(CF) -o Network $(BUILD_DIR)/main.o $(BUILD_DIR)/System.o $(BUILD_DIR)/Switch.o
+
+$(BUILD_DIR)/main.o: main.cpp 
+	$(CC) $(CF) -c -o $(BUILD_DIR)/main.o main.cpp
+
+$(BUILD_DIR)/System.o: System.cpp System.hpp 
+	$(CC) $(CF) -c -o $(BUILD_DIR)/System.o System.cpp
+
+$(BUILD_DIR)/Switch.o: Switch.cpp Switch.hpp 
+	$(CC) $(CF) -c -o $(BUILD_DIR)/Switch.o Switch.cpp
 
 .PHONY: clean
 clean:
-	rm -rf main System Switch &> /dev/nu
+	rm -rf Network $(BUILD_DIR) &> /dev/null

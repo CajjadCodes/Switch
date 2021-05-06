@@ -31,6 +31,6 @@
 *.out
 *.app
 
-main
-System
-Switch
+build
+build/*
+Network
