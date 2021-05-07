@@ -31,8 +31,8 @@
 *.out
 *.app
 
-vscode
-vscode/*
+.vscode
+.vscode/*
 build
 build/*
-Network
+NetworkManager

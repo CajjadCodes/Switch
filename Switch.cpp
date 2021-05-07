@@ -9,3 +9,9 @@ void Switch::listen() {
     cout << "im here" << endl;
     cout << "My id:" << this->id << ", My totalPorts: " << this->totalPorts << endl; 
 }
+
+
+int main (int argc, char* argv[]) {
+
+    return 0;
+}

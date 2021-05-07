@@ -3,13 +3,13 @@ CF=-std=c++11 -pedantic -W -pthread
 
 BUILD_DIR=build
 
-all: $(BUILD_DIR) Network $(BUILD_DIR)/System $(BUILD_DIR)/Switch
+all: $(BUILD_DIR) NetworkManager $(BUILD_DIR)/System $(BUILD_DIR)/Switch
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
-Network: $(BUILD_DIR)/main.cpp
-	$(CC) $(CF) -o Network $(BUILD_DIR)/main.cpp
+NetworkManager: NetworkManager.cpp
+	$(CC) $(CF) -o NetworkManager NetworkManager.cpp
 
 $(BUILD_DIR)/System: System.cpp System.hpp 
 	$(CC) $(CF) -o $(BUILD_DIR)/System System.cpp
@@ -19,4 +19,4 @@ $(BUILD_DIR)/Switch: Switch.cpp Switch.hpp
 
 .PHONY: clean
 clean:
-	rm -rf Network $(BUILD_DIR) &> /dev/null
+	rm -rf NetworkManager $(BUILD_DIR) &> /dev/null
