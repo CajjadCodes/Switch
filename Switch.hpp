@@ -8,6 +8,7 @@
 #include <vector>
 #include "defs.hpp"
 #include "frame.hpp"
+#include "util.hpp"
 class Switch {
 public:
     Switch(int _totalPorts, int _id);

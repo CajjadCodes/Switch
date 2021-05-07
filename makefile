@@ -11,11 +11,11 @@ $(BUILD_DIR):
 NetworkManager: NetworkManager.cpp
 	$(CC) $(CF) -o NetworkManager NetworkManager.cpp
 
-$(BUILD_DIR)/System: System.cpp System.hpp 
-	$(CC) $(CF) -o $(BUILD_DIR)/System System.cpp
+$(BUILD_DIR)/System: System.cpp System.hpp util.cpp
+	$(CC) $(CF) -o $(BUILD_DIR)/System System.cpp util.cpp
 
-$(BUILD_DIR)/Switch: Switch.cpp Switch.hpp 
-	$(CC) $(CF) -o $(BUILD_DIR)/Switch Switch.cpp
+$(BUILD_DIR)/Switch: Switch.cpp Switch.hpp util.cpp
+	$(CC) $(CF) -o $(BUILD_DIR)/Switch Switch.cpp util.cpp
 
 .PHONY: clean
 clean:
