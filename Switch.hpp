@@ -3,7 +3,11 @@
 
 #include <iostream>
 #include <unistd.h>
-
+#include <string>
+#include <sstream>
+#include <vector>
+#include "defs.hpp"
+#include "frame.hpp"
 class Switch {
 public:
     Switch(int _totalPorts, int _id);

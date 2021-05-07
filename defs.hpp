@@ -7,6 +7,7 @@
 #define WRITE_END 1
 
 #define CONNECT         "connect"
+#define CONNECT_SWITCH  "connect_switch"
 #define SEND            "send"
 #define EXIT_NETWORK    "exit_network"
 

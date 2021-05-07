@@ -13,7 +13,7 @@ typedef char byte;
 typedef struct {
     byte dataType;      // FILE_NAME or FILE_DATA or SPANNING_TREE
     byte senderID;
-    byte recieverID;
+    byte destinationID;
     byte totalSeq[2];
     byte seq[2];
     byte dataSize[2];   // up to MAX_PAYLOAD_SIZE
