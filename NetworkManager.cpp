@@ -212,10 +212,10 @@ void connectSwitchToSwitch(vector<string> params, vector<SwitchInfo> switches) {
         return;
     }
     command newCommand = {CONNECT_SWITCH, 
-                            switches[firstSwitchIndex].recievePipeName + "_" + to_string(switches[firstSwitchIndex].id),
                             to_string(switches[firstSwitchIndex].id),
-                            switches[secondSwitchIndex].recievePipeName+ "_" + to_string(switches[secondSwitchIndex].id),
+                            params[2],
                             to_string(switches[secondSwitchIndex].id),
+                            params[4],
                             ""};
     sendCommand(newCommand, switches[firstSwitchIndex].commandPipeWriteEnd);
     sendCommand(newCommand, switches[secondSwitchIndex].commandPipeWriteEnd);

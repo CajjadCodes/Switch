@@ -11,6 +11,8 @@
 #define SEND            "send"
 #define EXIT_NETWORK    "exit_network"
 
+#define MAX_PORTS   100
+
 #include <string>
 typedef struct {
     std::string commandType;

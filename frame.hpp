@@ -1,7 +1,7 @@
 #ifndef FRAME_HPP
 #define FRAME_HPP
 
-typedef char byte;
+typedef unsigned char byte;
 
 #define MAX_PAYLOAD_SIZE 1024 //1024 byte, 1 KB
 
